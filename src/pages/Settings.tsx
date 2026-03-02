@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import { motion } from "framer-motion";
-import { Save, Store, Receipt, DollarSign } from "lucide-react";
+import { Save, Store, Receipt, DollarSign, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
+import { Switch } from "@/components/ui/switch";
 
 const currencies = [
   { code: "INR", symbol: "₹", name: "Indian Rupee" },
@@ -13,6 +15,7 @@ const currencies = [
 export default function SettingsPage() {
   const { settings, updateSettings, addNotification } = useStore();
   const [form, setForm] = useState(settings);
+  const { isDark, toggleTheme } = useTheme();
 
   const handleSave = () => {
     updateSettings(form);
@@ -79,6 +82,23 @@ export default function SettingsPage() {
                 <span className="text-xs font-medium">{c.code}</span>
               </button>
             ))}
+          </div>
+        </div>
+
+        <div className="border-t border-border" />
+
+        {/* Appearance */}
+        <div>
+          <div className="flex items-center gap-2 mb-4">
+            {isDark ? <Moon size={18} className="text-primary" /> : <Sun size={18} className="text-primary" />}
+            <h2 className="font-display font-semibold text-foreground">Appearance</h2>
+          </div>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-foreground">Dark Mode</p>
+              <p className="text-xs text-muted-foreground">Toggle between light and dark theme</p>
+            </div>
+            <Switch checked={isDark} onCheckedChange={toggleTheme} />
           </div>
         </div>
 
