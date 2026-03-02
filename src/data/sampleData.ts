@@ -3,7 +3,7 @@ import pizzaImg from "@/assets/pizza.jpg";
 import friesImg from "@/assets/fries.jpg";
 import drinkImg from "@/assets/drink.jpg";
 
-export type Category = "Burger" | "Pizza" | "Combo" | "Drinks" | "Sides" | "Desserts";
+export type Category = "Burger" | "Pizza" | "Combo" | "Drinks" | "Sides" | "Desserts" | "Wraps" | "Sandwich" | "Momos" | "Indian Snacks" | "Pasta" | "Rice Bowl";
 
 export interface FoodItem {
   id: string;
@@ -46,7 +46,7 @@ export interface AppSettings {
   currencySymbol: string;
 }
 
-export const categories: Category[] = ["Burger", "Pizza", "Combo", "Drinks", "Sides", "Desserts"];
+export const categories: Category[] = ["Burger", "Pizza", "Combo", "Drinks", "Sides", "Desserts", "Wraps", "Sandwich", "Momos", "Indian Snacks", "Pasta", "Rice Bowl"];
 
 export const defaultSettings: AppSettings = {
   taxRate: 5,
@@ -118,6 +118,51 @@ export const sampleMenuItems: FoodItem[] = [
   { id: "48", name: "Apple Pie", category: "Desserts", price: 99, image: friesImg, stock: 25, description: "Warm apple pie with cinnamon" },
   { id: "49", name: "Rasgulla (2pc)", category: "Desserts", price: 59, image: drinkImg, stock: 35, description: "Soft spongy cottage cheese balls" },
   { id: "50", name: "Tiramisu", category: "Desserts", price: 199, image: drinkImg, stock: 12, description: "Classic Italian coffee dessert" },
+
+  // Wraps
+  { id: "51", name: "Chicken Shawarma Wrap", category: "Wraps", price: 159, image: burgerImg, stock: 40, description: "Juicy chicken shawarma with garlic sauce" },
+  { id: "52", name: "Paneer Tikka Wrap", category: "Wraps", price: 139, image: burgerImg, stock: 35, description: "Grilled paneer with mint chutney in tortilla" },
+  { id: "53", name: "Falafel Wrap", category: "Wraps", price: 129, image: burgerImg, stock: 30, description: "Crispy falafel with hummus & veggies" },
+  { id: "54", name: "Egg Roll Wrap", category: "Wraps", price: 99, image: burgerImg, stock: 50, description: "Kolkata style egg roll with onions" },
+  { id: "55", name: "Tandoori Chicken Wrap", category: "Wraps", price: 169, image: burgerImg, stock: 25, description: "Smoky tandoori chicken in rumali roti" },
+
+  // Sandwich
+  { id: "56", name: "Grilled Cheese Sandwich", category: "Sandwich", price: 89, image: friesImg, stock: 50, description: "Melted cheese between toasted bread" },
+  { id: "57", name: "Club Sandwich", category: "Sandwich", price: 149, image: friesImg, stock: 35, description: "Triple layer with chicken, egg & veggies" },
+  { id: "58", name: "Veg Mayo Sandwich", category: "Sandwich", price: 79, image: friesImg, stock: 45, description: "Fresh veggies with creamy mayo" },
+  { id: "59", name: "Paneer Tikka Sandwich", category: "Sandwich", price: 119, image: friesImg, stock: 30, description: "Spicy grilled paneer with peppers" },
+  { id: "60", name: "Chicken Tikka Sandwich", category: "Sandwich", price: 139, image: friesImg, stock: 30, description: "Juicy chicken tikka with mint sauce" },
+
+  // Momos
+  { id: "61", name: "Steamed Veg Momos (8pc)", category: "Momos", price: 89, image: friesImg, stock: 60, description: "Classic steamed veg dumplings" },
+  { id: "62", name: "Steamed Chicken Momos (8pc)", category: "Momos", price: 109, image: friesImg, stock: 50, description: "Tender chicken filled dumplings" },
+  { id: "63", name: "Fried Momos (8pc)", category: "Momos", price: 119, image: friesImg, stock: 45, description: "Crispy fried momos with schezwan dip" },
+  { id: "64", name: "Tandoori Momos (8pc)", category: "Momos", price: 139, image: friesImg, stock: 35, description: "Chargrilled momos with spicy coating" },
+  { id: "65", name: "Kurkure Momos (8pc)", category: "Momos", price: 129, image: friesImg, stock: 40, description: "Extra crunchy coated fried momos" },
+  { id: "66", name: "Paneer Momos (8pc)", category: "Momos", price: 99, image: friesImg, stock: 45, description: "Soft paneer stuffed momos" },
+
+  // Indian Snacks
+  { id: "67", name: "Samosa (2pc)", category: "Indian Snacks", price: 39, image: friesImg, stock: 80, description: "Crispy potato filled samosa" },
+  { id: "68", name: "Aloo Tikki", category: "Indian Snacks", price: 49, image: friesImg, stock: 60, description: "Spiced potato patties with chutney" },
+  { id: "69", name: "Pav Bhaji", category: "Indian Snacks", price: 99, image: friesImg, stock: 40, description: "Spicy mashed veggies with buttered pav" },
+  { id: "70", name: "Chole Bhature", category: "Indian Snacks", price: 119, image: friesImg, stock: 35, description: "Spicy chickpeas with fried bread" },
+  { id: "71", name: "Vada Pav", category: "Indian Snacks", price: 29, image: burgerImg, stock: 100, description: "Mumbai's iconic potato fritter burger" },
+  { id: "72", name: "Dahi Puri (6pc)", category: "Indian Snacks", price: 59, image: friesImg, stock: 50, description: "Crispy puris with yogurt & chutneys" },
+  { id: "73", name: "Spring Roll (4pc)", category: "Indian Snacks", price: 89, image: friesImg, stock: 40, description: "Crispy rolls with veggie filling" },
+
+  // Pasta
+  { id: "74", name: "Penne Arrabbiata", category: "Pasta", price: 179, image: pizzaImg, stock: 30, description: "Penne in spicy tomato sauce" },
+  { id: "75", name: "Alfredo Pasta", category: "Pasta", price: 199, image: pizzaImg, stock: 25, description: "Creamy white sauce pasta" },
+  { id: "76", name: "Mac & Cheese", category: "Pasta", price: 169, image: pizzaImg, stock: 30, description: "Cheesy baked macaroni" },
+  { id: "77", name: "Chicken Pasta", category: "Pasta", price: 219, image: pizzaImg, stock: 20, description: "Grilled chicken in pink sauce pasta" },
+  { id: "78", name: "Pesto Pasta", category: "Pasta", price: 189, image: pizzaImg, stock: 25, description: "Basil pesto with parmesan" },
+
+  // Rice Bowl
+  { id: "79", name: "Chicken Fried Rice", category: "Rice Bowl", price: 149, image: pizzaImg, stock: 35, description: "Wok tossed rice with chicken & veggies" },
+  { id: "80", name: "Veg Fried Rice", category: "Rice Bowl", price: 119, image: pizzaImg, stock: 40, description: "Stir fried rice with mixed vegetables" },
+  { id: "81", name: "Paneer Tikka Rice Bowl", category: "Rice Bowl", price: 169, image: pizzaImg, stock: 25, description: "Flavoured rice topped with paneer tikka" },
+  { id: "82", name: "Chicken Biryani", category: "Rice Bowl", price: 199, image: pizzaImg, stock: 30, description: "Aromatic basmati rice with spiced chicken" },
+  { id: "83", name: "Rajma Chawal Bowl", category: "Rice Bowl", price: 109, image: pizzaImg, stock: 35, description: "Kidney bean curry with steamed rice" },
 ];
 
 export const sampleOrders: Order[] = [
